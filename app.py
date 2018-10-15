@@ -21,7 +21,7 @@ orig_cost, sale_cost
 
 
 # scrape sales pages
-auto_scrape = False  # turn scraping ON (True) or OFF (False)
+auto_scrape = True  # turn scraping ON (True) or OFF (False)
 
 if auto_scrape:
     # - only scrape sales if they haven't already been checked within the last 24 hrs
