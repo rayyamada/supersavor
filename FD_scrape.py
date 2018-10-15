@@ -195,7 +195,7 @@ def scrape_sales():
 		            
 		        try:  # --ERROR HANDLING--
 		            temp2 = float(temp[0].s.text.strip().strip('$'))
-		            orig_price = temp2
+		            orig_price = str(temp2)
 		            
 		            temp3 = item.findAll('span',{'class':'save-price'})
 		            sale_price = re.search('^\$\d+\.\d+', temp3[0].text.strip() ).group().strip('$')
@@ -253,7 +253,7 @@ def scrape_sales():
 		        # write item entry to csv file
 		        f.write(item_name + ',' + \
 		                sku_code + ',' + \
-		                "{:.2f}".format(orig_price) + ',' + \
+		                orig_price + ',' + \
 		                sale_price + ',' + \
 		                str(sale_pct) + ',' + \
 		                str(in_stock) + ',' + \

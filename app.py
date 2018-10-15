@@ -30,6 +30,9 @@ if auto_scrape:
 
 
 def generate_output():
+    if auto_scrape:
+      # - only scrape sales if they haven't already been checked within the last 24 hrs
+      FD_scrape.scrape_sales()
 
     return html.Div([
         html.Div(dcc.Dropdown(
@@ -329,5 +332,5 @@ def render_content(tab,n_clicks_,drop_value_,drop_value,n_clicks):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
-    #app.run_server(debug=False, host='0.0.0.0', port=8050)
+    #app.run_server(debug=True)
+    app.run_server(debug=False, host='0.0.0.0', port=8050)
