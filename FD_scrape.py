@@ -9,6 +9,8 @@ from os.path import getmtime
 #-------------------------------------------------------------------------------
 def scrape_sales():
 	
+	new_changes = False   # keep track of changes
+	
 	# - only scrape sales if they haven't already been checked within the last 24 hrs
 	current_time = time()
 	secinday = 24*60*60
@@ -136,6 +138,7 @@ def scrape_sales():
 
 		f.close()
 		print('wrote '+ filename)
+		new_changes = True
 		sleep(1)
 
 
@@ -264,9 +267,10 @@ def scrape_sales():
 
 		f.close()
 		print('wrote '+ filename)
+		new_changes = True
 		sleep(1)
 
-	return
+	return new_changes
 
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------

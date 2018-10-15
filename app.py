@@ -32,7 +32,12 @@ if auto_scrape:
 def generate_output():
     if auto_scrape:
       # - only scrape sales if they haven't already been checked within the last 24 hrs
-      FD_scrape.scrape_sales()
+      new_changes = FD_scrape.scrape_sales()
+
+      if new_changes:
+        df2, ingred_list, main_list, bool_vec, sales_vec, \
+           recipe_mat,recipe_mat_norm, orig_prices     = savor.initialize()
+
 
     return html.Div([
         html.Div(dcc.Dropdown(
