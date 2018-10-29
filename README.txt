@@ -11,6 +11,7 @@ The supersavor app is a collection of python scripts which
 The web app allows the user to select preferences (e.g. meat, no meat, budget, etc...)
 and recommends recipes in order of those that save the most money.  The app is meant to facilitate the process of having to look through sales and choose recipes, thereby saving the user time and money. 
 
+The web app is hosted on AWS at http://www.supersavorapp.website/
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
