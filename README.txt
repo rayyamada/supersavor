@@ -12,6 +12,7 @@ The web app allows the user to select preferences (e.g. meat, no meat, budget, e
 and recommends recipes in order of those that save the most money.  The app is meant to facilitate the process of having to look through sales and choose recipes, thereby saving the user time and money. 
 
 The web app is hosted on AWS at http://www.supersavorapp.website/
+The recipe database can be found at https://www.kaggle.com/hugodarwood/epirecipes#full_format_recipes.json
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
@@ -30,7 +31,6 @@ scripts 1-4 are preliminary scripts (i.e., need to be run only once and/or infre
 learning
 
 
-
 2. savor_ingred_list.py  (only needs to be run once; must be run after 1.)
 
 - this script takes nouns in 'nouns.csv' and generates the list of ingredients, which includes the most common bi- and tri-grams  (e.g. 'cherry tomato')
@@ -38,15 +38,12 @@ learning
 The latter removes some non-food words from the list (e.g. 'thermometer')
  
 
-
 3. savor_base_prices.py  (only run occasionally (e.g. seasonally) to update non-sale prices; must be run after 2.)
 
 - using the online non-sale prices for all goods, tries to find a price for every item
 in our 'ingredients_list_short.csv' from step 2.
 - saves the price, item name, sku, units of the ingredients in  'base_price_vec.csv'
-
-- note: this script requires as input allnorm_fruits.csv, allnorm_meat.csv, ...
-These files are provided and a Jupyter notebook example for scraping is also provided. 
+- the output 'base_price_vec.csv' is provided
 
 
 4. savor_recipemat.py  (only needs to be run once, after 2.  Update as needed if 
