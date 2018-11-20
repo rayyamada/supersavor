@@ -77,11 +77,10 @@ def scrape_sales():
 		            orig_price = temp2
 		            sale_price = round( (1-sale_pct)*orig_price, 2)
 		        except:
-		        #    continue  # if price is not available (or not formatted righ), then skip
-		            #orig_price = ''
-		            #sale_price = ''
-		            foo31 = 2
-		            
+		        	orig_price = ''
+		            sale_price = ''
+		            continue  # if price is not available (or not formatted righ), then skip
+		                
 		            
 		        # units_soldas
 		        temp3 = re.search('\/[a-z]+', temp[0].text.strip() )
@@ -205,10 +204,10 @@ def scrape_sales():
 		            
 		            # sale_price = round( (1-sale_pct)*orig_price, 2)
 		        except:
-		        #    continue  # if price is not available (or not formatted righ), then skip
 		            orig_price = ''
 		            sale_price = ''
-		            foo31 = 2
+		            continue  # if price is not available (or not formatted righ), then skip
+		            
 		            
 		            
 		        # units_soldas
